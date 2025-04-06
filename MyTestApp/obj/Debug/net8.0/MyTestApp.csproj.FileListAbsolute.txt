@@ -1,0 +1,14 @@
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\bin\Debug\net8.0\MyTestApp.exe
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\bin\Debug\net8.0\MyTestApp.deps.json
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\bin\Debug\net8.0\MyTestApp.runtimeconfig.json
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\bin\Debug\net8.0\MyTestApp.dll
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\bin\Debug\net8.0\MyTestApp.pdb
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.AssemblyInfoInputs.cache
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.AssemblyInfo.cs
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.csproj.CoreCompileInputs.cache
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.dll
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\refint\MyTestApp.dll
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.pdb
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.genruntimeconfig.cache
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\ref\MyTestApp.dll
