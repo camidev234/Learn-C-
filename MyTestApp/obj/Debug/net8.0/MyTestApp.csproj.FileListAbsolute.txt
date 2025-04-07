@@ -12,3 +12,4 @@ C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\refint\MyTest
 C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.pdb
 C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.genruntimeconfig.cache
 C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\ref\MyTestApp.dll
+C:\Users\Camilo\Documents\testappcsharp\MyTestApp\obj\Debug\net8.0\MyTestApp.sourcelink.json

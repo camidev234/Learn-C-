@@ -32,6 +32,8 @@ public class Menu {
                 Console.WriteLine("26. Average of numbers");
                 Console.WriteLine("27. Show max number in int array (int[])");
                 Console.WriteLine("28. What is the day in year");
+                Console.WriteLine("29. Sort random array");
+                Console.WriteLine("30. Show bidimensional array");
                 Console.WriteLine("40. Exit");
                 Console.WriteLine("Enter the option you want to use: ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -324,6 +326,7 @@ public class Menu {
                             arrayGenerated[idx] = randomNumber;
                         }
 
+
                         Console.WriteLine("Start array: ");
                         ShowArrayToString(arrayGenerated);
                         Console.WriteLine();
@@ -335,6 +338,10 @@ public class Menu {
                         ShowArrayToString(sortedArray);
                         Console.WriteLine();
 
+                        break;
+                    case 30:
+                        int[,] bidimensionalArrayGenerated = FillBidimensionalArray();
+                        InitialExcercises.ShowBidimensionalArray(bidimensionalArrayGenerated);
                         break;
                     default:
                         break;
@@ -361,6 +368,23 @@ public class Menu {
         }
 
         return numbersInArray;
+    }
+
+    public static int[,] FillBidimensionalArray() {
+        Random random = new Random();
+        int rows = random.Next(2, 10);
+        int cols = random.Next(1, 10);
+        
+        int[,] bidimensionalArray = new int[rows, cols];
+
+        for(int r = 0; r < bidimensionalArray.GetLength(0); r++) {
+            for(int c = 0; c < bidimensionalArray.GetLength(1); c++) {
+                bidimensionalArray[r,c] = random.Next(0, 999);
+            }
+        }
+
+        return bidimensionalArray;
+
     }
 
     public static void ShowArrayToString(int[] array) {

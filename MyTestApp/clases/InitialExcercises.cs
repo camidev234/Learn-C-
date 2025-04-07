@@ -365,4 +365,23 @@ public class InitialExcercises {
         return numbers;
     }
 
+    public static void ShowBidimensionalArray<T>(T[,] bidimensionalArray) {
+        /*
+            Important methods:
+            - array.Length -> Total elements (rows * cols)
+            - array.GetLength(0) -> Total rows (0 is a constant)
+            - array.GetLength(1) -> Total cols (1 is a constant) 
+            - array.Rank -> Dimentions
+        */
+        for(int r = 0; r < bidimensionalArray.GetLength(0); r++) {
+            // This for iterates each row 
+            Console.WriteLine($"Showing row {r+1}");
+            for(int c = 0; c < bidimensionalArray.GetLength(1); c++) {
+                // This for iterates each column in this current row
+                Console.WriteLine($"Column {c+1} (Coord [{r}, {c}]): {bidimensionalArray[r,c]}");
+            }
+            Console.WriteLine();
+        }
+    }
+
 }
