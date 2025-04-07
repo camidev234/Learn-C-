@@ -419,4 +419,33 @@ public class InitialExcercises {
         return determinant;
     }
 
+    public static int Determinant3x3(int[,] matrix) {
+
+        /*
+            |a b c|
+            |d e f|
+            |g h i|
+            
+            Det = a(ei-fh) - b(di-fg) + c(dh-eg)
+        
+        */
+
+        if(matrix.GetLength(0) !=3 || matrix.GetLength(1) !=3 ) {
+            throw new ArgumentException("Only 3x3 matrices are allowed");
+        }
+
+        int a = matrix[0,0];
+        int b = matrix[0,1];
+        int c = matrix[0,2];
+
+        int d1 = (matrix[1,1] * matrix[2,2]) - (matrix[1,2] * matrix[2,1]);
+        int d2 = (matrix[1,0] * matrix[2,2]) - (matrix[1,2] * matrix[2,0]);
+        int d3 = (matrix[1,0] * matrix[2,1]) - (matrix[1,1] * matrix[2,0]);
+
+        int det =  (a * d1) - (b * d2) + (c * d3);
+
+        return det; 
+
+    }
+
 }

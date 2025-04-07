@@ -36,6 +36,7 @@ public class Menu {
                 Console.WriteLine("30. Show bidimensional array");
                 Console.WriteLine("31. Major of bidimensional array");
                 Console.WriteLine("32. Determinant of 2x2 matrix");
+                Console.WriteLine("33. Determinant of 3x3 matrix");
                 Console.WriteLine("40. Exit");
                 Console.WriteLine("Enter the option you want to use: ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -372,6 +373,21 @@ public class Menu {
                             try {
                                 matrix2x2 = FillManualBidimensional(2, 2);
                                 int determinant = InitialExcercises.Determinant2x2(matrix2x2);
+                                Console.WriteLine("The determinant is {0}", determinant);
+                                break;
+                            } catch(FormatException) {
+                                Console.WriteLine("The value is not a number, please retry");
+                            } catch(ArgumentException exc) {
+                                Console.WriteLine("Error:" + exc.Message);
+                            }
+                        }
+                        break;
+                    case 33:
+                        int[,] matrix3x3;
+                        while(true) {
+                            try {
+                                matrix3x3 = FillManualBidimensional(3, 3);
+                                int determinant = InitialExcercises.Determinant3x3(matrix3x3);
                                 Console.WriteLine("The determinant is {0}", determinant);
                                 break;
                             } catch(FormatException) {
