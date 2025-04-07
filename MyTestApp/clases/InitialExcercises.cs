@@ -388,8 +388,8 @@ public class InitialExcercises {
         // init 1D array, when the lenght will be the number of rows in the bidimensional array
         int[] majorPerRow = new int[bidimensionalArray.GetLength(0)];
         for(int r = 0; r < bidimensionalArray.GetLength(0); r++) {
-            // In each row, init the major in  0;
-            int majorInRow = 0;
+            // In each row, init the major using the index 0 for each row beacuse the array may be contents negative numbers
+            int majorInRow = bidimensionalArray[r,0];
             for(int c = 0; c < bidimensionalArray.GetLength(1); c++) {
                 // if the bidimensional in current row and column, is major than major in the current row
                 if(bidimensionalArray[r,c] > majorInRow) {
@@ -403,5 +403,20 @@ public class InitialExcercises {
 
         return majorPerRow;
     }   
+
+    public static int Determinant2x2(int[,] matrix) {
+        if(matrix.GetLength(0) !=2 || matrix.GetLength(1) !=2 ) {
+            throw new ArgumentException("Only 2x2 matrices are allowed");
+        }
+
+        int a = matrix[0,0];
+        int b = matrix[0,1];
+        int c = matrix[1,0];
+        int d = matrix[1,1];
+
+        int determinant = (a * d) - (b * c);
+
+        return determinant;
+    }
 
 }

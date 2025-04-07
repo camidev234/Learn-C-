@@ -34,6 +34,8 @@ public class Menu {
                 Console.WriteLine("28. What is the day in year");
                 Console.WriteLine("29. Sort random array");
                 Console.WriteLine("30. Show bidimensional array");
+                Console.WriteLine("31. Major of bidimensional array");
+                Console.WriteLine("32. Determinant of 2x2 matrix");
                 Console.WriteLine("40. Exit");
                 Console.WriteLine("Enter the option you want to use: ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -343,6 +345,42 @@ public class Menu {
                         int[,] bidimensionalArrayGenerated = FillBidimensionalArray();
                         InitialExcercises.ShowBidimensionalArray(bidimensionalArrayGenerated);
                         break;
+                    case 31:
+                        int[,] bidimensionalArrayGen;
+                        while(true) {
+                            try {
+                                Console.Write("Enter the number of rows: ");
+                                int rowsIn2d = Convert.ToInt32(Console.ReadLine());
+                                Console.Write("Enter the number of columns: ");
+                                int colsIn2d = Convert.ToInt32(Console.ReadLine());
+                                bidimensionalArrayGen = FillManualBidimensional(rowsIn2d, colsIn2d);
+                                int[] majorPerRow = InitialExcercises.MajorPerRow(bidimensionalArrayGen);
+                                int row = 1;
+                                foreach(int majorNumber in majorPerRow) {
+                                    Console.WriteLine($"The major in row {row} is {majorNumber}");
+                                    row++;
+                                }
+                                break;
+                            } catch(FormatException) {
+                                Console.WriteLine("The value is not a number, please retry");
+                            }
+                        }
+                        break;
+                    case 32:
+                        int[,] matrix2x2;
+                        while(true) {
+                            try {
+                                matrix2x2 = FillManualBidimensional(2, 2);
+                                int determinant = InitialExcercises.Determinant2x2(matrix2x2);
+                                Console.WriteLine("The determinant is {0}", determinant);
+                                break;
+                            } catch(FormatException) {
+                                Console.WriteLine("The value is not a number, please retry");
+                            } catch(ArgumentException exc) {
+                                Console.WriteLine("Error:" + exc.Message);
+                            }
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -352,6 +390,18 @@ public class Menu {
         }
     }
 
+    public static int[,] FillManualBidimensional(int rows, int cols) {
+
+        int[,] bidimensionalArray = new int[rows,cols];
+
+        for(int r = 0; r < bidimensionalArray.GetLength(0); r++) {
+            for(int c = 0; c < bidimensionalArray.GetLength(1); c++) {
+                Console.Write($"Enter the number {c+1} to row {r+1}: ");
+                bidimensionalArray[r,c] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        return bidimensionalArray;
+    }
 
     public static int[] EnterArrayOfNumbers() {
         Console.Write("Enter the number of elements: ");
