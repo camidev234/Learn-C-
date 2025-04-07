@@ -384,4 +384,24 @@ public class InitialExcercises {
         }
     }
 
+    public static int[] MajorPerRow(int[,] bidimensionalArray) {
+        // init 1D array, when the lenght will be the number of rows in the bidimensional array
+        int[] majorPerRow = new int[bidimensionalArray.GetLength(0)];
+        for(int r = 0; r < bidimensionalArray.GetLength(0); r++) {
+            // In each row, init the major in  0;
+            int majorInRow = 0;
+            for(int c = 0; c < bidimensionalArray.GetLength(1); c++) {
+                // if the bidimensional in current row and column, is major than major in the current row
+                if(bidimensionalArray[r,c] > majorInRow) {
+                    // The new major for this row, will be the actual index using [row, column]
+                    majorInRow = bidimensionalArray[r,c];
+                }
+            }
+            // Add the major of this row to array that contains the major per row
+            majorPerRow[r] = majorInRow;
+        }
+
+        return majorPerRow;
+    }   
+
 }
