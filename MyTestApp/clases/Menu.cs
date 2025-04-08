@@ -37,6 +37,7 @@ public class Menu {
                 Console.WriteLine("31. Major of bidimensional array");
                 Console.WriteLine("32. Determinant of 2x2 matrix");
                 Console.WriteLine("33. Determinant of 3x3 matrix");
+                Console.WriteLine("34. Sucursal sales");
                 Console.WriteLine("40. Exit");
                 Console.WriteLine("Enter the option you want to use: ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -396,6 +397,40 @@ public class Menu {
                                 Console.WriteLine("Error:" + exc.Message);
                             }
                         }
+                        break;
+                    case 34:
+                        Console.Write("Enter the number of sucursals: ");
+                        int sucrusalNumber = Convert.ToInt32(Console.ReadLine());
+
+                        decimal[][] sucursals = new decimal[sucrusalNumber][];
+
+                        for(int i = 0; i < sucursals.Length; i++) {
+                            Console.Write($"Enter how many days work in sucursal {i+1}: ");
+                            sucursals[i] = new decimal[Convert.ToInt32(Console.ReadLine())];
+                            for(int c = 0; c < sucursals[i].Length; c++) {
+                                Console.Write($"Enter how much did the store sell in day {c+1}: ");
+                                sucursals[i][c] = Convert.ToDecimal(Console.ReadLine());
+                            }
+                        }
+
+                        decimal[,] sumAveragePerSucursal = InitialExcercises.SumAveragePerArray(sucursals);
+                        decimal majorOfSucursals = sumAveragePerSucursal[0,0];
+                        int sucursalWithMoreSells = 1;
+
+                        for(int r = 0; r < sumAveragePerSucursal.GetLength(0); r++) {
+                            if(sumAveragePerSucursal[r,0] > majorOfSucursals) {
+                                majorOfSucursals = sumAveragePerSucursal[r,0];
+                                sucursalWithMoreSells = r+1;
+                            }
+                            Console.WriteLine($"The sum of sells in sucursal {r+1} was: {sumAveragePerSucursal[r,0].ToString("N2")}");
+                            Console.WriteLine($"The average of sells in sucursal {r+1} was {sumAveragePerSucursal[r,1].ToString("N2")}");
+                            Console.WriteLine("-----------------------------------------------------------------------------");
+                        }
+
+                        majorOfSucursals.ToString("N2");
+
+                        Console.WriteLine($"The sucursal with more sells was {sucursalWithMoreSells} with {majorOfSucursals}");
+
                         break;
                     default:
                         break;

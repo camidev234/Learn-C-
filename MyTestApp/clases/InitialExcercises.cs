@@ -448,4 +448,21 @@ public class InitialExcercises {
 
     }
 
+    public static decimal[,] SumAveragePerArray(decimal[][] jaggedArray) {
+        // Init an 2d array when the rows are the length of the jagged array and columns 2
+        // The 0 index saves the sum of all elements in row and 1 index saves the average of row
+
+        decimal[,] sumAveragePerArray = new decimal[jaggedArray.Length, 2];
+        for(int i = 0; i < jaggedArray.Length; i++) {
+            decimal sumInArray = 0m;
+            for(int c = 0; c < jaggedArray[i].Length; c++) {
+                sumInArray += jaggedArray[i][c];
+            }
+            sumAveragePerArray[i, 0] = sumInArray;
+            sumAveragePerArray[i, 1] = sumInArray / jaggedArray[i].Length; 
+        }
+
+        return sumAveragePerArray;
+    }
+
 }
